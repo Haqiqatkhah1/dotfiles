@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Step 1: Download the GPG backup file
+sudo apt-get install -y zsh git gpg-agent 
+
 echo "Please enter the URL for the GPG backup file:"
 read -r gpg_backup_url
 wget "$gpg_backup_url" -O gpg_backup.key
@@ -11,7 +13,6 @@ read -rs gpg_passphrase
 gpg --import --batch --yes --passphrase "$gpg_passphrase" gpg_backup.key
 
 # Installing zsh and Oh My Zsh, then setting zsh as the default shell
-sudo apt-get install -y zsh git
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 chsh -s $(which zsh)
 
