@@ -1,21 +1,20 @@
 #!/bin/bash
 
 RECIPIENT="0577AC9550BCBEB7"
-BACKUP_DIR="/home/mohammad/backup"
+BACKUP_DIR="$HOME/backup"
 COMBINED_ARCHIVE="DOT_FILES"
 DECRYPTED_ARCHIVE="decrypted_DOT_FILES.tar.gz"
 REMOTE_REPO="https://github.com/Haqiqatkhah1/dotfiles.git"
-USER_HOME="/home/mohammad" # Replace 'mohammad' with your actual username
 
 # Paths to items to encrypt
 ITEMS_TO_ENCRYPT=(
-  "/home/mohammad/.ssh/"
-  "/home/mohammad/.kube/config"
-  "/home/mohammad/wire.conf"
-  "/home/mohammad/.zshrc"
-  "/home/mohammad/backupkeys.pgp"
-  "/home/mohammad/encrypt.sh"
-  "/home/mohammad/recoverycodes"
+  "$HOME/.ssh/"
+  "$HOME/.kube/config"
+  "$HOME/wire.conf"
+  "$HOME/.zshrc"
+  "$HOME/backupkeys.pgp"
+  "$HOME/encrypt.sh"
+  "$HOME/recoverycodes"
 )
 
 # Encrypt function
