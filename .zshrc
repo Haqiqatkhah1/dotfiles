@@ -104,5 +104,5 @@ alias wiregu="sudo wg-quick up /home/mohammad/wire.conf"
 alias pyc="/snap/bin/pycharm-professional"
 alias kfall='kubectl get pods --watch --no-headers |fzf --track --tac --preview-window="65%"  --height="~80%" --preview="while true;do clear;kubectl logs --tail=$LINES {1}|ccze -m ansi;sleep 1;done" --bind="enter:become(kubectl logs --timestamps -f {1} --tail=$LINES|fzf --track),esc:abort" --border-label="\$(kubectx_prompt_info)" --info=inline-right --prompt="Pod Name>"'
 alias krr='kubectl rollout restart deployment '
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 source /home/mohammad/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
