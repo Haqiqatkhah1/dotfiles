@@ -106,5 +106,10 @@ alias kfall='kubectl get pods --watch --no-headers |fzf --track --tac --preview-
 alias krr='kubectl rollout restart deployment '
 alias gotoex='kubectl config use-context exchange@prod'
 alias gotobl='kubectl config use-context blockchain@prod'
+alias clusterrestart='for d in `kubectl get deployments  | grep -v "front\|minio\|metabase\|price-watcher\|file-manager\|coins\|user-level" | grep -v NAME | awk '{ print $1 }'`
+do
+	kubectl rollout restart deployment/$d 
+done
+'
 source /home/mohammad/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
