@@ -15,6 +15,9 @@ ITEMS_TO_ENCRYPT=(
   "$HOME/backupkeys.pgp"
   "$HOME/encrypt.sh"
   "$HOME/recoverycodes"
+  "$HOME/.config/terminator"
+  "$HOME/.config/github_copilot"
+  "$HOME/.config/JetBrains"
 )
 
 # Encrypt function
@@ -27,7 +30,6 @@ encrypt() {
   gpg --output "$COMBINED_ARCHIVE.tar.gz.gpg" --encrypt --recipient $RECIPIENT "$COMBINED_ARCHIVE.tar.gz"
 
   if [ $? -eq 0 ]; then
-    echo "Encryption successful: $COMBINED_ARCHIVE.tar.gz.gpg"
     mv "$COMBINED_ARCHIVE.tar.gz.gpg" "$BACKUP_DIR/"
     echo "Backup stored: $BACKUP_DIR/$COMBINED_ARCHIVE.tar.gz.gpg"
     rm "$COMBINED_ARCHIVE.tar.gz"
