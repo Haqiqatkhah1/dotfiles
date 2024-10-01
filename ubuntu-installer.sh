@@ -20,6 +20,11 @@ sudo apt update
 sudo apt install zsh -y
 check_error
 
+echo "Installing Git..."
+sudo apt install git -y
+check_error
+
+
 echo "Installing Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 check_error
