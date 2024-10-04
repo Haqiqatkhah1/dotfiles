@@ -32,6 +32,8 @@ check_error
 echo "Downloading .zshrc template..."
 ZSHRC_REPO="https://raw.githubusercontent.com/Haqiqatkhah1/dotfiles/refs/heads/master/.zshrc"
 curl -L "$ZSHRC_REPO" -o ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 check_error
 
 echo "Setting Zsh as the default shell..."
