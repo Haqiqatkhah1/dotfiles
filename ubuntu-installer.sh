@@ -39,6 +39,8 @@ wget -O ~/.zshrc $ZSHRC_URL
 # Step 7: Apply new .zshrc
 echo "Applying new .zshrc..."
 source ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo "Setup complete. Please log out and log back in for the changes to take effect."
 
