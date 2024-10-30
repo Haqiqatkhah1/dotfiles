@@ -29,6 +29,21 @@ fi
 echo "Fetching .zshrc configuration from $ZSHRC_URL..."
 curl -o "$HOME/.zshrc" "$ZSHRC_URL" || { echo "Failed to download .zshrc file"; exit 1; }
 
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
+  echo "Installing zsh-autosuggestions..."
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" || { echo "Failed to install zsh-autosuggestions"; exit 1; }
+else
+  echo "zsh-autosuggestions is already installed."
+fi
+
+# Step 4: Install zsh-syntax-highlighting
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+  echo "Installing zsh-syntax-highlighting..."
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" || { echo "Failed to install zsh-syntax-highlighting"; exit 1; }
+else
+  echo "zsh-syntax-highlighting is already installed."
+fi
+
 # Step 4: Fetch the GitHub public key and add it to authorized_keys
 echo "Fetching GitHub public key for $GITHUB_USERNAME..."
 GITHUB_KEY_URL="https://github.com/$GITHUB_USERNAME.keys"
