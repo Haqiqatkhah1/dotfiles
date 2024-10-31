@@ -12,7 +12,7 @@ GITHUB_USERNAME="haqiqatkhah1"  # Replace with your GitHub username
 # Step 1: Install zsh if it’s not installed
 if ! command -v zsh &> /dev/null; then
   echo "Installing zsh..."
-  sudo apt update && sudo apt install -y zsh || { echo "Failed to install zsh"; exit 1; }
+  sudo apt update && sudo apt install -y zsh git || { echo "Failed to install zsh"; exit 1; }
 else
   echo "zsh is already installed."
 fi
